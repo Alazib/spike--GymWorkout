@@ -8,6 +8,8 @@ function Resume() {
 
   const user = useContext(UserContext)
 
+  const { name, exercise, kilos } = user.state
+
   function backToStep3() {
     navigate("/step3")
   }
@@ -16,9 +18,9 @@ function Resume() {
     <div className="resume">
       <h1>Resume</h1>
       <ul>
-        <li>NAME: {user.state.name}</li>
-        <li>EXERCISE: </li>
-        <li>Kilos: Kg</li>
+        <li>NAME: {name}</li>
+        <li>EXERCISE: {exercise} </li>
+        <li>Kilos: {kilos}Kg</li>
       </ul>
 
       <Button

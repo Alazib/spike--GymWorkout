@@ -1,8 +1,11 @@
 import Button from "./Button/Button"
 import { useNavigate } from "react-router"
+import { useContext } from "react"
+import UserContext from "../context/User/UserContext"
 
 function Step2() {
   const navigate = useNavigate()
+  const { dispatch } = useContext(UserContext)
 
   function backToStep1() {
     navigate("/")
@@ -12,7 +15,12 @@ function Step2() {
     navigate("/step3")
   }
 
-  function handleInputChange(e) {}
+  function handleInputChange(e) {
+    dispatch({
+      type: "ADD_EXERCISE",
+      payload: e.target.value,
+    })
+  }
 
   return (
     <div className="step 2">
