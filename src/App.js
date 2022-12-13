@@ -5,10 +5,12 @@ import Resume from "./components/Resume"
 import { Routes } from "react-router"
 import { Route } from "react-router"
 import { UserState } from "./context/User/UserState"
+import Stepper from "./components/Stepper"
 
 function App() {
   return (
     <div className="app">
+      <Stepper></Stepper>
       <UserState>
         <Routes>
           <Route path="/" element={<Step1 />} />
